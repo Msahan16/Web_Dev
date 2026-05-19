@@ -1,5 +1,5 @@
 /**
- * Kupal Floral Boutique Homepage - Custom Interactions
+ * Floris Floral Boutique Homepage - Custom Interactions
  * Designed with modern responsive features and micro-animations.
  */
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initAnnouncementBar() {
   const bar = document.getElementById('announcement-bar');
   const closeBtn = document.getElementById('close-announcement');
-  
+
   if (bar && closeBtn) {
     closeBtn.addEventListener('click', () => {
       bar.classList.add('hidden-bar');
@@ -151,11 +151,11 @@ function initCategoryFilters() {
   tabs.forEach(tab => {
     tab.addEventListener('click', (e) => {
       e.preventDefault();
-      
+
       // Remove active class from all tabs
       tabs.forEach(t => t.classList.remove('active', 'border-brand-coral', 'text-brand-coral'));
       tabs.forEach(t => t.classList.add('border-transparent', 'text-gray-500'));
-      
+
       // Add active state to clicked tab
       tab.classList.add('active', 'border-brand-coral', 'text-brand-coral');
       tab.classList.remove('border-transparent', 'text-gray-500');
@@ -166,7 +166,7 @@ function initCategoryFilters() {
         // Simple scale transition
         product.style.transform = 'scale(0.95)';
         product.style.opacity = '0';
-        
+
         setTimeout(() => {
           if (filterValue === 'all' || product.getAttribute('data-category') === filterValue) {
             product.classList.remove('hidden');
@@ -195,12 +195,12 @@ function initCartSimulation() {
       e.stopPropagation();
 
       currentCount += 1;
-      
+
       // Update all cart count displays (desktop/mobile)
       cartCounters.forEach(counter => {
         counter.textContent = currentCount;
         counter.classList.remove('hidden');
-        
+
         // Bounce animation
         counter.classList.remove('animate-cart-pop');
         void counter.offsetWidth; // trigger reflow
@@ -312,14 +312,14 @@ function initTestimonialSlider() {
 function initSmoothScroll() {
   const scrollLinks = document.querySelectorAll('a[href^="#"]');
   scrollLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
       if (targetId === '#') return;
-      
+
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         e.preventDefault();
-        
+
         // Account for sticky navbar height
         const navbarHeight = document.getElementById('navbar')?.offsetHeight || 80;
         const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navbarHeight;
@@ -343,7 +343,7 @@ function showToast(message) {
   const toast = document.createElement('div');
   toast.className = 'custom-toast fixed bottom-6 right-6 bg-brand-dark text-white px-6 py-4 rounded-full shadow-2xl z-50 flex items-center gap-3 animate-fade-in border border-gray-800 text-sm md:text-base';
   toast.style.backgroundColor = '#1a1a1a';
-  
+
   // Custom Icon inside toast (elegant mini flower or success check)
   toast.innerHTML = `
     <svg class="w-5 h-5 text-brand-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
